@@ -1,0 +1,108 @@
+#RESUMEN DEL CURSO DE VIM - COMANDOS DE VIM
+
+INSTALACION: sudo pacman -S vim
+
+#COMANDOS PARA SALIR/GUARDAR ARCHIVOS
+
+:w     guardar el archivo
+:q     salir del archivo
+!     forzar accion
+
+#COMANDOS DE DESPLAZAMIENTO
+
+h     mover el cursor hacia la izquierda
+l     mover el cursor hacia la derecha
+j     mover el cursor hacia abajo
+k     mover el cursor hacia arriba
+
+w     mover el cursor al inicio de la siguiente palabra
+b     mover el cursor hacia el inicio de la anterior palabra
+e     mover el cursor hacia el final de la siguiente palabra
+
+0     ir al inicio de la linea
+$     ir al final de la linea
+
+gg    ir al inicio del archivo
+G     ir al final del archivo
+16G   ir a una linea especifica
+
+%     ir a la pareja de parentesis
+
+#COMANDOS DE BUSQUEDA
+
+/     buscar del cursor en adelante
+?     buscar del cursor hacia atras
+n     ir hacia adelante en la busqueda
+N     ir hacia atras en la busqueda
+
+#COMANDOS PARA INSERTAR EL CURSOR
+
+i     entrar al modo insertar
+a     insertar despues del cursor
+A     insertar al final de la linea
+o     insertar el cursor en una nueva linea abajo
+O     insertar el cursor en una nueca linea arriba
+
+#COMANDOS PARA ELIMINAR TEXTO
+
+x     elimina un caracter a continuacion
+dw    eliminar una palabra
+u     deshacer
+ctrl + r  rehacer
+d$    eliminar el contenido de una linea desde el cursor en adelante
+dd    elimina una linea completa
+
+#COMANDOS PARA CAMBIAR TEXTO
+
+cw    cambiar palabra a partir del cursor
+ciw   cambiar la palabra donde sea que este el cursor
+:s/cadena/nuevaCadena   reemplazar la primera ocurrencia de la cadena en la linea
+:s/cadena/nuecaCadena/g reemplazar todas las ocurrencias de la cadena en la linea
+:%s/cadena/nuecaCadena/gc reemplazar todas las ocurrencias de la cadena en el archivo
+R     entrar al modo reemplazar
+
+#COMANDOS PARA COPIAR/PEGAR TEXTO
+
+v     entrar al modo visual
+y     copiar
+p     pegar en la linea de abajo desde el clipboard
+P     pegar en la linea de arriba desde el clipboard
+
+
+
+#COMANDOS PARA MOVERNOS ENTRE ARCHIVOS
+
+gd    ir a la definicion
+gf    if al archivo de origen de definicion
+ctrl + o  ir hacia atras en el historial
+ctrl + i  ir hacia adelante en el historial
+
+#COMANDOS PARA LA CONFIGURACION DE VIM
+
+set number            establece los numeros
+set mouse=a           interactuar con el mouse
+set numberwidth=1     configurar el ancho
+set clipboard=unnamed permitir el compartimiento de blipboard con el SO
+syntaxis enable       pintado de sintaxis
+set showcmd           ver comandos
+set ruler             ver linea actual
+set showmatch         mostrar parentesis enlazados
+set sw=2              cambiat tab por espacios
+set relativenumber    ver numero de lineas relativas
+
+#CUESTIONARIO
+1. ¿Qué es un Editor de texto y para qué sirve?
+  - Un editor de texto es un programa que nos permite crear y modificar archivos de texto plano, nos sirve para almacenar codigo e instrucciones para darle a otros programas. Ademas en entornos de desarrollo Linux nos sirve bastante ya que por lo general todo es un archivo de texto.
+
+2. ¿Cómo funciona vim?
+ - Vim es un programa de edicion de texto basado en modos, es decir dependiendo de determinados comandos, cambiaremos entre un modo u otro que nos permitira tener ciertas funcionalidades, el modo insertar es para escribir texto, el modo visual es para seleccionar texto y el modo normal es en el que se puede navegar, buscar copiar y manejar texto.
+
+ 3. Muestre ejemplos de todos los comandos aprendidos en vim
+
+  - Para hacer rapidamente un guardado y salida del archivo en el que se trabaja, se puede mapear la siguiente instruccion
+  nnoremap <leader>x :wq!<CR>
+
+  - Para ir a una linea determinada, por ejemplo el 12, podemos hacer uso del siguiente comando
+    12G
+    Pero tambien podriamos hacer:
+    :12
